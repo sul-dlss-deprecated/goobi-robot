@@ -16,7 +16,7 @@ ROBOT_LOG.level = Logger::SEV_LABEL.index(ENV['ROBOT_LOG_LEVEL']) || Logger::INF
 begin
   require 'solrizer'
   Solrizer.logger = ROBOT_LOG
-rescue LoadError, NameError, NoMethodError
+rescue 
 end
 
 # Load core robot services

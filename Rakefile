@@ -1,30 +1,37 @@
 require 'rake'
 require 'rake/testtask'
 require 'robot-controller/tasks'
+begin
+  require 'rubocop/rake_task'
+  RuboCop::RakeTask.new(:rubocop) do |task|
+   task.options = ['-l'] # run lint cops only
+  end
+rescue LoadError
+  task :rubocop do
+    puts "Rubocop is not installed"
+  end
+end
 
 # Import external rake tasks
 Dir.glob('lib/tasks/*.rake').each { |r| import r }
 
-task :default  => [:rspec_run, :doc]
+task default: :ci
 
-desc 'Clean old coverage.data'
-task :clean do
-  FileUtils.rm('coverage.data') if File.exist? 'coverage.data'
-end
+desc "run continuous integration suite (tests, coverage, rubocop lint)"
+task :ci => [:spec, :rubocop]
 
-require 'rspec/core/rake_task'
-RSpec::Core::RakeTask.new(:spec)
-
-desc 'Run RSpec with RCov'
-RSpec::Core::RakeTask.new(:rspec_run) do |t|
-  t.pattern = 'spec/**/*_spec.rb'
-  t.rcov = true
-  t.rcov_opts = %w{--rails --exclude osx\/objc,gems\/,spec\/}
+begin
+  require 'rspec/core/rake_task'
+  RSpec::Core::RakeTask.new(:spec)
+rescue LoadError
+  task :spec do
+    puts "RSpec is not installed"
+  end
 end
 
 desc 'Get application version'
 task :app_version do
-  puts File.read(File.expand_path('../VERSION', __FILE__)).chomp
+  puts File.read(File.expand_path('../VERSION',__FILE__)).chomp
 end
 
 desc 'Load complete environment into rake process'

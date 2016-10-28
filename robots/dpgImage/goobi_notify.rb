@@ -22,7 +22,7 @@ module Robots       # Robot package
           end
 
           with_retries(max_tries: Dor::Config.dpg.max_tries, handler: handler, base_sleep_seconds: Dor::Config.dpg.base_sleep_seconds, max_sleep_seconds: Dor::Config.dpg.max_sleep_seconds) do |_attempt|
-            url = "#{Dor::Config.dor.service_root}/objects/#{@druid}/notify_goobi"
+            url = "#{Dor::Config.dor.service_root}/objects/#{druid}/notify_goobi"
             response = RestClient.post url,{}
             response.code  
           end                         
