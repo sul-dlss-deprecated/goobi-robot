@@ -41,7 +41,7 @@
 #
 
 sul-robots1-dev:
-  - dor_dpgImageWF_goobi-notify
+  - dor_goobiWF_goobi-notify
 
 sul-robots2-dev:
-  - dor_dpgImageWF_goobi-notify
+  - dor_goobiWF_goobi-notify

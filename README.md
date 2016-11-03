@@ -53,7 +53,7 @@ Specify the robot you want to run, also specify environment with -e flag and dru
 If you want to run multiple druids, instead of specifying a single druid with a -d flag, you can specify a text filename as a -f flag, with one druid per line.
 
 ```console
-$ bin/run_robot dor:dpgImageWF:goobi-notify -e development -d druid:bb027yn4436
+$ bin/run_robot dor:goobiWF:goobi-notify -e development -d druid:bb027yn4436
 ```
 
 ## Deploy

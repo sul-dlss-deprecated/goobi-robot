@@ -8,7 +8,7 @@ Dor::Config.configure do
   end
   
   dpg do
-    workflow_name 'dpgImageWF'
+    workflow_name 'goobiWF'
     max_tries  5  # the number of attempts to retry service calls before failing
     max_sleep_seconds   120  # max sleep seconds between tries
     base_sleep_seconds  10   # base sleep seconds between tries       
