@@ -1,8 +1,8 @@
 # config valid only for Capistrano 3.1
 # lock '3.2.1'
 
-set :application, 'dpg-image'
-set :repo_url, 'https://github.com/sul-dlss/dpg-image.git'
+set :application, 'goobi'
+set :repo_url, 'https://github.com/sul-dlss/goobi-robot.git'
 
 set :home_directory, "/home/lyberadmin"
 

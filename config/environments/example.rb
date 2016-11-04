@@ -7,7 +7,7 @@ Dor::Config.configure do
     workspace '/tmp'
   end
   
-  dpg do
+  goobi do
     workflow_name 'goobiWF'
     max_tries  5  # the number of attempts to retry service calls before failing
     max_sleep_seconds   120  # max sleep seconds between tries

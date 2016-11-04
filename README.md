@@ -1,7 +1,7 @@
-[![Build Status](https://travis-ci.org/sul-dlss/dpg-image.svg?branch=master)](https://travis-ci.org/sul-dlss/dpg-image)
-[![Coverage Status](https://coveralls.io/repos/github/sul-dlss/dpg-image/badge.svg?branch=add-coveralls-hound)](https://coveralls.io/github/sul-dlss/dpg-image?branch=add-coveralls-hound)
+[![Build Status](https://travis-ci.org/sul-dlss/goobi-robot.svg?branch=master)](https://travis-ci.org/sul-dlss/goobi-robot)
+[![Coverage Status](https://coveralls.io/repos/github/sul-dlss/goobi-robot/badge.svg?branch=add-coveralls-hound)](https://coveralls.io/github/sul-dlss/goobi-robot?branch=add-coveralls-hound)
 
-# Dpg Image WF Robot Suite
+# GoobiWF Robot Suite
 
 Robot suite that handles notifying goobi via a web service call to dor-web-service
 

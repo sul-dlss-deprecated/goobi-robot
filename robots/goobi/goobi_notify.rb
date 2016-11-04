@@ -8,7 +8,7 @@ module Robots       # Robot package
         include LyberCore::Robot
 
         def initialize
-          super('dor', Dor::Config.dpg.workflow_name, 'gooby-notify', check_queued_status: true) # init LyberCore::Robot
+          super('dor', Dor::Config.goobi.workflow_name, 'gooby-notify', check_queued_status: true) # init LyberCore::Robot
         end
 
         # `perform` is the main entry point for the robot. This is where
@@ -18,10 +18,10 @@ module Robots       # Robot package
         def perform(druid)
           LyberCore::Log.debug "goobi-notify working on #{druid}"
           handler = proc do |exception, attempt_number, _total_delay|
-            LyberCore::Log.debug "#{exception.class} on dor-services-app update_marc_record call #{attempt_number} for #{@druid}" if attempt_number >= Dor::Config.dpg.max_tries
+            LyberCore::Log.debug "#{exception.class} on dor-services-app update_marc_record call #{attempt_number} for #{@druid}" if attempt_number >= Dor::Config.goobi.max_tries
           end
 
-          with_retries(max_tries: Dor::Config.dpg.max_tries, handler: handler, base_sleep_seconds: Dor::Config.dpg.base_sleep_seconds, max_sleep_seconds: Dor::Config.dpg.max_sleep_seconds) do |_attempt|
+          with_retries(max_tries: Dor::Config.goobi.max_tries, handler: handler, base_sleep_seconds: Dor::Config.goobi.base_sleep_seconds, max_sleep_seconds: Dor::Config.goobi.max_sleep_seconds) do |_attempt|
             url = "#{Dor::Config.dor.service_root}/objects/#{druid}/notify_goobi"
             response = RestClient.post url,{}
             response.code  
