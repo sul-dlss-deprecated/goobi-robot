@@ -17,11 +17,8 @@ module Robots       # Robot package
         # @param [String] druid -- the Druid identifier for the object to process
         def perform(druid)
           LyberCore::Log.debug "goobi-notify working on #{druid}"
-          handler = proc do |exception, attempt_number, _total_delay|
-            raise exception if attempt_number >= Dor::Config.goobi.max_tries
-          end
 
-          with_retries(max_tries: Dor::Config.goobi.max_tries, handler: handler, base_sleep_seconds: Dor::Config.goobi.base_sleep_seconds, max_sleep_seconds: Dor::Config.goobi.max_sleep_seconds) do |_attempt|
+          with_retries(max_tries: Dor::Config.goobi.max_tries, base_sleep_seconds: Dor::Config.goobi.base_sleep_seconds, max_sleep_seconds: Dor::Config.goobi.max_sleep_seconds) do |_attempt|
             url = "#{Dor::Config.dor.service_root}/objects/#{druid}/notify_goobi"
             response = RestClient.post url,{}
             response.code  

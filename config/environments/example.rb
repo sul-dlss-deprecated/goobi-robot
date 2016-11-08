@@ -9,9 +9,9 @@ Dor::Config.configure do
   
   goobi do
     workflow_name 'goobiWF'
-    max_tries  5  # the number of attempts to retry service calls before failing
-    max_sleep_seconds   120  # max sleep seconds between tries
-    base_sleep_seconds  10   # base sleep seconds between tries       
+    max_tries  3  # the number of attempts to retry service calls before failing
+    max_sleep_seconds   60  # max sleep seconds between tries
+    base_sleep_seconds  5   # base sleep seconds between tries       
   end
   
   dor do
