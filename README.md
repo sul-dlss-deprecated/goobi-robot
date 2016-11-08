@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/sul-dlss/goobi-robot.svg?branch=master)](https://travis-ci.org/sul-dlss/goobi-robot)
-[![Coverage Status](https://coveralls.io/repos/github/sul-dlss/goobi-robot/badge.svg?branch=add-coveralls-hound)](https://coveralls.io/github/sul-dlss/goobi-robot?branch=add-coveralls-hound)
+[![Coverage Status](https://coveralls.io/repos/github/sul-dlss/goobi-robot/badge.svg?branch=master)](https://coveralls.io/github/sul-dlss/goobi-robot?branch=master)
 
 # GoobiWF Robot Suite
 
