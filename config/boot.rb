@@ -47,3 +47,5 @@ begin
   end
 end
 require 'robot-controller'
+
+Dor::WorkflowService.configure(Dor::Config.workflow.url)
