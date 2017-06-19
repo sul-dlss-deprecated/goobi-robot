@@ -1,18 +1,11 @@
-# config valid only for Capistrano 3.1
-# lock '3.2.1'
-
 set :application, 'goobi'
 set :repo_url, 'https://github.com/sul-dlss/goobi-robot.git'
-
-set :home_directory, "/home/lyberadmin"
-
-#set :branch, 'master'
 
 # Default branch is :master
 ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 
 # Default deploy_to directory is /var/www/my_app
-set :deploy_to, "#{fetch(:home_directory)}/#{fetch(:application)}"
+set :deploy_to, "/home/lyberadmin/#{fetch(:application)}"
 set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:stage)}" }
 
 # Default value for :scm is :git
