@@ -27,3 +27,5 @@ group :development do
   gem 'capistrano-bundler', '~> 1.1'
   gem 'dlss-capistrano'
 end
+
+gem 'honeybadger'

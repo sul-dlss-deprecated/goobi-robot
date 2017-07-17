@@ -34,6 +34,7 @@ set :log_level, :info
 # set :keep_releases, 5
 
 set :linked_dirs, %w(log run config/environments config/certs)
+set :linked_files, %w(config/honeybadger.yml)
 
 namespace :deploy do
   desc 'Restart application'
@@ -52,3 +53,5 @@ namespace :deploy do
 
   after :publishing, :restart
 end
+
+set :honeybadger_env, fetch(:stage)
