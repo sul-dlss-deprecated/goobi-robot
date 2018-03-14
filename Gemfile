@@ -18,7 +18,7 @@ group :development, :test do
 end
 
 group :development do
-  if File.exist?(mygems = File.join(ENV['HOME'],'.gemfile'))
+  if File.exist?(mygems = File.join(ENV['HOME'], '.gemfile'))
     instance_eval(File.read(mygems))
   end
   gem 'yard'
