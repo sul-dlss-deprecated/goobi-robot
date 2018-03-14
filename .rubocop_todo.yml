@@ -8,7 +8,7 @@
 
 # Offense count: 1
 # Cop supports --auto-correct.
-Lint/BlockAlignment:
+Layout/BlockAlignment:
   Exclude:
     - 'config/deploy.rb'
 
@@ -50,7 +50,7 @@ Style/Documentation:
 # Offense count: 2
 # Cop supports --auto-correct.
 # Configuration parameters: AllowForAlignment.
-Style/ExtraSpacing:
+Layout/ExtraSpacing:
   Exclude:
     - 'Gemfile'
     - 'bin/run_robot'
@@ -80,7 +80,7 @@ Style/SingleLineBlockParams:
 # Offense count: 4
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, SupportedStyles, EnforcedStyleForEmptyBraces, SpaceBeforeBlockParameters.
-Style/SpaceInsideBlockBraces:
+Layout/SpaceInsideBlockBraces:
   Enabled: false
 
 # Offense count: 2
