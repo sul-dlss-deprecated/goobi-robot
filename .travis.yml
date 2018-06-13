@@ -1,5 +1,4 @@
 language: ruby
 rvm:
-  - 2.2.2
-  - 2.3.4
+  - 2.3.7 # deployed
 sudo: false
