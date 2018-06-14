@@ -6,9 +6,7 @@ require 'coveralls'
 Coveralls.wear!
 
 RSpec.configure do |config|
-
   config.order = 'random'
-
 end
 
 SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter.new([
@@ -24,6 +22,6 @@ require 'rspec'
 require 'webmock/rspec'
 
 def setup_work_item(druid)
-  @work_item=double("work_item")
-  allow(@work_item).to receive_messages(:druid=>druid)
+  @work_item = double('work_item')
+  allow(@work_item).to receive_messages(:druid => druid)
 end

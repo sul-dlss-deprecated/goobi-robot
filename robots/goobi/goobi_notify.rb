@@ -1,8 +1,8 @@
-# Robot class to run under multiplexing infrastructure
 module Robots       # Robot package
   module DorRepo    # Use DorRepo/SdrRepo to avoid name collision with Dor module
-    module Goobi   # This is your workflow package name (using CamelCase)
-      class GoobiNotify # This is your robot name (using CamelCase)
+    module Goobi # This is your workflow package name (using CamelCase)
+      # Robot class to run under multiplexing infrastructure
+      class GoobiNotify
         # Build off the base robot implementation which implements
         # features common to all robots
         include LyberCore::Robot
@@ -20,9 +20,9 @@ module Robots       # Robot package
 
           with_retries(max_tries: Dor::Config.goobi.max_tries, base_sleep_seconds: Dor::Config.goobi.base_sleep_seconds, max_sleep_seconds: Dor::Config.goobi.max_sleep_seconds) do |_attempt|
             url = "#{Dor::Config.dor.service_root}/objects/#{druid}/notify_goobi"
-            response = RestClient.post url,{}
-            response.code  
-          end                         
+            response = RestClient.post url, {}
+            response.code
+          end
         end
       end
     end
