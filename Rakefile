@@ -1,8 +1,15 @@
 require 'rake'
 require 'rake/testtask'
 require 'robot-controller/tasks'
-require 'rubocop/rake_task'
-RuboCop::RakeTask.new(:rubocop)
+
+begin
+  require 'rubocop/rake_task'
+  RuboCop::RakeTask.new
+rescue LoadError
+  task :rubocop do
+    raise 'Unable to load rubocop'
+  end
+end
 
 # Import external rake tasks
 Dir.glob('lib/tasks/*.rake').each { |r| import r }
