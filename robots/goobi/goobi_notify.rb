@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Robots       # Robot package
   module DorRepo    # Use DorRepo/SdrRepo to avoid name collision with Dor module
     module Goobi # This is your workflow package name (using CamelCase)

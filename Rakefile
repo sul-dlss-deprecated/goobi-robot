@@ -1,10 +1,14 @@
+# frozen_string_literal: true
+
 require 'rake'
 require 'rake/testtask'
 require 'robot-controller/tasks'
 
 begin
   require 'rubocop/rake_task'
-  RuboCop::RakeTask.new
+  RuboCop::RakeTask.new do |task|
+    task.fail_on_error = true
+  end
 rescue LoadError
   task :rubocop do
     raise 'Unable to load rubocop'
@@ -17,7 +21,7 @@ Dir.glob('lib/tasks/*.rake').each { |r| import r }
 task default: :ci
 
 desc 'run continuous integration suite (tests, coverage, rubocop lint)'
-task :ci => [:spec, :rubocop]
+task :ci => [:rubocop, :spec]
 
 begin
   require 'rspec/core/rake_task'

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 Dor::Config.configure do
   workflow.url 'https://example.com/workflow/'
   solr.url 'http://localhost:8080/solr/argo'
@@ -18,5 +20,5 @@ Dor::Config.configure do
   end
 end
 
-REDIS_URL = '127.0.0.1:6379/resque:development'.freeze # hostname:port[:db]/namespace
+REDIS_URL = '127.0.0.1:6379/resque:development' # hostname:port[:db]/namespace
 # REDIS_TIMEOUT = '5' # seconds

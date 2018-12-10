@@ -1,13 +1,15 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 
-gem 'dor-services', '~> 5.11'
-gem 'activesupport', '< 5'
-gem 'lyber-core', '~> 4.0', '>= 4.0.3'
-gem 'robot-controller', '~> 2.0' # requires Resque
-gem 'pry', '~> 0.10.0'          # for bin/console
-gem 'slop', '>= 3.5.0'          # for bin/run_robot
-gem 'rake', '>= 10.3.2'
+gem 'dor-services', '~> 6.0', '>= 6.0.5'
+gem 'honeybadger'
+gem 'lyber-core', '~> 4.0', '>= 4.1.3'
+gem 'pry'
+gem 'rake'
 gem 'retries'
+gem 'robot-controller', '~> 2.0' # requires Resque
+gem 'slop'
 
 group :development, :test do
   gem 'coveralls', require: false
@@ -26,5 +28,3 @@ group :development do
   gem 'capistrano-bundler', '~> 1.1'
   gem 'dlss-capistrano'
 end
-
-gem 'honeybadger'

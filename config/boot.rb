@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Ensure subsequent requires search the correct local paths
 $:.unshift File.expand_path(File.join(File.dirname(__FILE__), '..', 'lib'))
 $:.unshift File.expand_path(File.join(File.dirname(__FILE__), '..', 'robots'))
