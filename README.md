@@ -12,7 +12,7 @@ Check the [Wiki](https://github.com/sul-dlss/robot-master/wiki) in the robot-mas
 
 ## Dependences
 
-Ruby 2.3.7
+Ruby 2.5.3
 
 ## Setup
 
