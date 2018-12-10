@@ -1,4 +1,6 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
+
 # Will run one robot as specified, either for a druid a file containing one druid per line
 #
 # To run With Options

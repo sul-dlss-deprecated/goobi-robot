@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 server 'sul-robots1-test.stanford.edu', user: 'lyberadmin', roles: %w(web app db)
 server 'sul-robots2-test.stanford.edu', user: 'lyberadmin', roles: %w(web app db)
 
