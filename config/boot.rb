@@ -49,5 +49,12 @@ begin
   end
 end
 require 'robot-controller'
+require 'dor/services/client'
 
+# configure dor-workflow-service
 Dor::WorkflowService.configure(Dor::Config.workflow.url)
+
+# Configure dor-services-client to use the dor-services URL
+Dor::Services::Client.configure(url: Dor::Config.dor_services.url,
+                                username: Dor::Config.dor_services.username,
+                                password: Dor::Config.dor_services.password)

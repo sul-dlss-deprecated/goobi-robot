@@ -11,12 +11,14 @@ Dor::Config.configure do
   goobi do
     workflow_name 'goobiWF'
     max_tries 1 # the number of attempts to retry service calls before failing
-    max_sleep_seconds   20  # max sleep seconds between tries
-    base_sleep_seconds  5   # base sleep seconds between tries
+    max_sleep_seconds 20 # max sleep seconds between tries
+    base_sleep_seconds 5 # base sleep seconds between tries
   end
 
-  dor do
-    service_root 'https://USERNAME:PASSWORD@example.com/dor/v1'
+  dor_services do
+    url 'https://example.com/dor'
+    username 'USERNAME'
+    password 'PASSWORD'
   end
 end
 
