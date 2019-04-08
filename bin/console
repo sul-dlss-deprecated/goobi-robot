@@ -8,12 +8,10 @@ ENV['ROBOT_ENVIRONMENT'] = ARGV.shift unless ARGV.first.nil?
 require File.expand_path(File.dirname(__FILE__) + '/../config/boot')
 
 silence_warnings do
-  begin
-    require 'pry'
-    IRB = Pry
-  rescue LoadError
-    puts 'LoadError!'
-  end
+  require 'pry'
+  IRB = Pry
+rescue LoadError
+  puts 'LoadError!'
 end
 
 IRB.start

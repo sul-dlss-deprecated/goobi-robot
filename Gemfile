@@ -2,8 +2,8 @@
 
 source 'https://rubygems.org'
 
-gem 'dor-services-client', '>= 0.7.0' # 0.7.0 is the first release to have the goobi method call we need
-gem 'dor-services', '~> 6.0', '>= 6.0.5'
+gem 'dor-services-client', '~> 1.0'
+gem 'dor-services', '~> 6.1'
 gem 'honeybadger'
 gem 'lyber-core', '~> 4.0', '>= 4.1.3'
 gem 'pry'
