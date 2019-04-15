@@ -16,6 +16,8 @@ module Robots       # Robot package
         # `perform` is the main entry point for the robot. This is where
         # all of the robot's work is done.
         #
+        # This method makes a POST request to dor-services-app which is responsible for notifing the Goobi system itself.
+        #
         # @param [String] druid -- the Druid identifier for the object to process
         def perform(druid)
           LyberCore::Log.debug "goobi-notify working on #{druid}"
